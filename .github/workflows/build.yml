@@ -1,0 +1,24 @@
+name: build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 10, 12, 14 ]
+    name: build (node ${{ matrix.node }})
+    steps:
+      - name: Checkout code
+        uses: Brightspace/third-party-actions@actions/checkout
+      - name: Setup node
+        uses: Brightspace/third-party-actions@actions/setup-node
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install packages
+        run: npm i
+      - name: Run tests
+        run: npm test
