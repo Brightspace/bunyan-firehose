@@ -1,4 +1,4 @@
-# bunyan-firehose
+# Bunyan Firehose
 
 An AWS Firehose extension for the Bunyan logger
 
@@ -7,7 +7,7 @@ inspired by [[@crccheck/kinesis-streams](https://github.com/crccheck/kinesis-str
 Installing
 ----------
 
-    npm install bunyan-firehose
+    npm install github:Brightspace/bunyan-firehose
 
 Writeable stream
 ----------------
