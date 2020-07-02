@@ -11,7 +11,13 @@
     "bunyan",
     "firehose"
   ],
-  "author": "D2L",
+  "author": "Eli Goldberg, D2L",
+  "contributors": [
+    {
+      "name": "Alexander Kravets",
+      "email": "alex@slatestudio.com"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/Brightspace/bunyan-firehose/issues"
   },
