@@ -2,27 +2,48 @@
   "name": "bunyan-firehose",
   "version": "0.0.5",
   "description": "An AWS Firehose extension for the Bunyan logger",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo no tests yet"
-  },
-  "keywords": [],
-  "author": "Eli Goldberg",
-  "contributors": [
-    {
-      "name": "Alexander Kravets",
-      "email": "alex@slatestudio.com"
-    }
-  ],
+  "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/Eli-Goldberg/bunyan-firehose"
+    "type": "git",
+    "url": "https://github.com/Brightspace/bunyan-firehose"
   },
-  "license": "ISC",
+  "keywords": [
+    "bunyan",
+    "firehose"
+  ],
+  "author": "D2L",
+  "bugs": {
+    "url": "https://github.com/Brightspace/bunyan-firehose/issues"
+  },
+  "homepage": "https://github.com/Brightspace/bunyan-firehose#readme",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "npm run lint -s -- --fix",
+    "pretest": "npm run lint -s && license-checker-ci",
+    "test": "nyc mocha --colors"
+  },
+  "files": [
+    "src/**/*.js"
+  ],
   "dependencies": {
     "aws-sdk": "2.104.0",
     "bunyan": "1.8.12",
     "lodash": "4.17.4",
     "retry": "0.10.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "d2l-license-checker": "^3.1.1",
+    "eslint": "^7.3.1",
+    "eslint-config-brightspace": "^0.9.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-mocha": "^7.0.1",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.0.2"
   }
 }
