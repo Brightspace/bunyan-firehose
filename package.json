@@ -1,7 +1,7 @@
 {
   "name": "bunyan-firehose",
   "version": "0.0.5",
-  "description": "An AWS Firehose extension for the Bunyan logger",
+  "description": "AWS Firehose extension for the Bunyan logger",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "url": "https://github.com/Brightspace/bunyan-firehose/issues"
   },
   "homepage": "https://github.com/Brightspace/bunyan-firehose#readme",
-  "main": "index.js",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },
@@ -37,7 +37,6 @@
   ],
   "dependencies": {
     "aws-sdk": "2.104.0",
-    "bunyan": "1.8.12",
     "lodash": "4.17.15",
     "retry": "0.10.1"
   },
