@@ -39,16 +39,18 @@ class FirehoseStream extends Writable {
 		this.hasPriority = this.buffer.isPrioritaryMsg || this.buffer.hasPriority;
 		this.recordsQueue = [];
 
-		if (credentials) {
-			AWS.config.credentials = credentials;
-		} else {
+		if (!credentials) {
 			// increase timeout to get credentials from the EC2 Metadata Service
-			AWS.config.credentials = new AWS.EC2MetadataCredentials({
+			credentials = new AWS.EC2MetadataCredentials({
 				httpOptions: httpOptions || { timeout: 5000 }
 			});
 		}
 
-		this.firehose = firehose || new AWS.Firehose({ region, httpOptions });
+		this.firehose = firehose || new AWS.Firehose({
+			region,
+			httpOptions,
+			credentials
+		});
 	}
 
 	dispatch(records, cb) {
