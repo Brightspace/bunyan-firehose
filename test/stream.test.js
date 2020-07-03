@@ -2,7 +2,7 @@
 
 const AWS = require('aws-sdk');
 const bunyan = require('bunyan');
-const { createStream } = require('../src');
+const { createStream } = require('../');
 const deepmerge = require('deepmerge');
 const { expect } = require('chai');
 const { merge } = require('lodash');
