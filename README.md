@@ -1,6 +1,6 @@
 # Bunyan Firehose
 
-An AWS Firehose extension for the Bunyan logger
+AWS Firehose extension for the Bunyan logger
 
 ## Table of Contents
 

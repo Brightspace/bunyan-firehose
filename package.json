@@ -1,7 +1,7 @@
 {
   "name": "bunyan-firehose",
   "version": "0.0.5",
-  "description": "An AWS Firehose extension for the Bunyan logger",
+  "description": "AWS Firehose extension for the Bunyan logger",
   "license": "MIT",
   "repository": {
     "type": "git",
