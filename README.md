@@ -1,5 +1,7 @@
 # Bunyan Firehose
 
+[![Build][CI Badge]][CI Branch]
+
 AWS Firehose extension for the Bunyan logger
 
 ## Table of Contents
@@ -101,3 +103,7 @@ npm run format
 ```
 
 This will format based on [.eslintrc](.eslintrc) settings.
+
+<!-- links -->
+[CI Badge]: https://github.com/Brightspace/bunyan-firehose/workflows/build/badge.svg?branch=master
+[CI Branch]: https://github.com/Brightspace/bunyan-firehose/actions?query=workflow%3Abuild+branch%3Amaster
