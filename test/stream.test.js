@@ -1,12 +1,10 @@
-'use strict';
-
-const AWS = require('aws-sdk');
-const bunyan = require('bunyan');
-const { createStream } = require('../');
-const deepmerge = require('deepmerge');
-const { expect } = require('chai');
-const { merge } = require('lodash');
-const sinon = require('sinon');
+import AWS from 'aws-sdk';
+import { stdSerializers, createLogger } from 'bunyan';
+import { createStream } from '../';
+import deepmerge from 'deepmerge';
+import { expect } from 'chai';
+import { merge } from 'lodash';
+import { createSandbox, match } from 'sinon';
 
 const region = 'us-east-1';
 const name = 'bunyan-firehose-logger';
@@ -23,11 +21,11 @@ const streamCommonConfig = {
 const loggerCommonConfig = {
 	name,
 	level: 'trace',
-	serializers: bunyan.stdSerializers,
+	serializers: stdSerializers,
 };
 
 const createTestLogger = (loggerConfig) => {
-	const logger = bunyan.createLogger(loggerConfig);
+	const logger = createLogger(loggerConfig);
 
 	expect(logger).to.not.be.null;
 
@@ -70,7 +68,7 @@ describe('stream', () => {
 		let firehoseStub;
 
 		beforeEach(() => {
-			sandbox = sinon.createSandbox();
+			sandbox = createSandbox();
 			credentialsStub = sandbox
 				.stub(AWS, 'Credentials')
 				.returns(credentials);
@@ -84,7 +82,7 @@ describe('stream', () => {
 				firehoseStub,
 				{
 					region,
-					httpOptions: sinon.match.any,
+					httpOptions: match.any,
 					credentials
 				}
 			);

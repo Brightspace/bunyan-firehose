@@ -6,6 +6,9 @@
         "mocha",
         "chai-friendly"
     ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
     "rules": {
         "mocha/no-identical-title": [
             "error"
