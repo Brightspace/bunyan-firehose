@@ -1,6 +1,7 @@
 # Bunyan Firehose
 
 [![Build][CI Badge]][CI Branch]
+[![License]](LICENSE)
 
 AWS Firehose extension for the Bunyan logger
 
@@ -107,3 +108,4 @@ This will format based on [.eslintrc](.eslintrc) settings.
 <!-- links -->
 [CI Badge]: https://github.com/Brightspace/bunyan-firehose/workflows/build/badge.svg?branch=master
 [CI Branch]: https://github.com/Brightspace/bunyan-firehose/actions?query=workflow%3Abuild+branch%3Amaster
+[License]: https://img.shields.io/github/license/Brightspace/bunyan-firehose
