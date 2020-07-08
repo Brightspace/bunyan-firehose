@@ -3,7 +3,7 @@
 [![Build][CI Badge]][CI Branch]
 [![License]](LICENSE)
 
-AWS Firehose extension for the Bunyan logger
+AWS Firehose extension for the Bunyan logger.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ AWS Firehose extension for the Bunyan logger
 ## Installing
 
 ```
-npm install github:Brightspace/bunyan-firehose
+npm i github:Brightspace/bunyan-firehose
 ```
 
 ## Usage
