@@ -11,3 +11,4 @@ updates:
       - dependencies
       - auto
     rebase-strategy: auto
+    versioning-strategy: increase
