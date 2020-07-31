@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node: [ 10, 12, 14 ]
-    name: build (node ${{ matrix.node }})
+    name: Build (node ${{ matrix.node }})
     steps:
       - name: Checkout code
         uses: Brightspace/third-party-actions@actions/checkout
@@ -22,3 +22,19 @@ jobs:
         run: npm i
       - name: Run tests
         run: npm test
+      - name: Report coverage
+        uses: Brightspace/third-party-actions@coverallsapp/github-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: node ${{ matrix.node }}
+          parallel: true
+  complete-coverage:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Complete coverage
+    steps:
+      - name: Complete coverage
+        uses: Brightspace/third-party-actions@coverallsapp/github-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
