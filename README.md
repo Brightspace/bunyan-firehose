@@ -3,7 +3,7 @@
 [![Build][CI Badge]][CI Branch]
 [![License]](LICENSE)
 
-AWS Firehose extension for the Bunyan logger.
+AWS Firehose extension for the Bunyan logger. Test
 
 ## Table of Contents
 
