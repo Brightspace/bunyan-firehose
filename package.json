@@ -36,7 +36,7 @@
     "src/**/*.js"
   ],
   "dependencies": {
-    "aws-sdk": "^2.727.1",
+    "aws-sdk": "^2.728.0",
     "lodash": "^4.17.19",
     "retry": "^0.12.0"
   },
