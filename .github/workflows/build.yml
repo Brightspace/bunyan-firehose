@@ -6,18 +6,18 @@ on:
       - master
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 10, 12, 14 ]
-    name: Build (node ${{ matrix.node }})
     steps:
       - name: Checkout code
         uses: Brightspace/third-party-actions@actions/checkout
+      - name: Read configs
+        id: configs
+        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
       - name: Setup node
         uses: Brightspace/third-party-actions@actions/setup-node
         with:
-          node-version: ${{ matrix.node }}
+          node-version: ${{ steps.configs.outputs.NODE_VERSION }}
       - name: Install packages
         run: npm i
       - name: Run tests
@@ -26,15 +26,3 @@ jobs:
         uses: Brightspace/third-party-actions@coverallsapp/github-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: node ${{ matrix.node }}
-          parallel: true
-  complete-coverage:
-    needs: build
-    runs-on: ubuntu-latest
-    name: Complete coverage
-    steps:
-      - name: Complete coverage
-        uses: Brightspace/third-party-actions@coverallsapp/github-action
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
