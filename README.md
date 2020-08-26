@@ -19,13 +19,13 @@ AWS Firehose extension for the Bunyan logger.
 
 ## Installing
 
-```
+```bash
 npm i github:Brightspace/bunyan-firehose
 ```
 
 ## Usage
 
-```
+```javascript
 'use strict';
 
 const bunyan = require('bunyan');
@@ -83,7 +83,7 @@ Development can be done on any machine that can install **Node.js**.
 
 Install dependencies via `npm`.
 
-```
+```bash
 npm i
 ```
 
@@ -91,7 +91,7 @@ npm i
 
 Execute tests via `npm`.
 
-```
+```bash
 npm test
 ```
 
@@ -102,7 +102,7 @@ coverage report after test execution.
 
 Execute formatter via `npm`.
 
-```
+```bash
 npm run format
 ```
 
