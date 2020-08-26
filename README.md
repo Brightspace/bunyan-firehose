@@ -1,8 +1,10 @@
 # Bunyan Firehose
 
-[![License]](LICENSE)
-[![Build][CI Badge]][CI Branch]
-[![Coverage][Coverage Badge]][Coverage Repo]
+[![License][License Badge]](LICENSE)
+[![Version][Version Badge]](package.json#L3)
+[![Build][CI Badge]][CI Workflow]
+[![Coverage][Coverage Badge]][Coverage Report]
+[![Vulnerabilities][Vulnerabilities Badge]][Vulnerabilities Report]
 
 AWS Firehose extension for the Bunyan logger.
 
@@ -107,8 +109,11 @@ npm run format
 This will format based on [.eslintrc](.eslintrc) settings.
 
 <!-- links -->
-[License]: https://img.shields.io/github/license/Brightspace/bunyan-firehose
+[License Badge]: https://img.shields.io/github/license/Brightspace/bunyan-firehose
+[Version Badge]: https://img.shields.io/github/package-json/v/Brightspace/bunyan-firehose
 [CI Badge]: https://github.com/Brightspace/bunyan-firehose/workflows/build/badge.svg?branch=master
-[CI Branch]: https://github.com/Brightspace/bunyan-firehose/actions?query=workflow%3Abuild+branch%3Amaster
+[CI Workflow]: https://github.com/Brightspace/bunyan-firehose/actions?query=workflow%3Abuild+branch%3Amaster
 [Coverage Badge]: https://coveralls.io/repos/github/Brightspace/bunyan-firehose/badge.svg?branch=master
-[Coverage Repo]: https://coveralls.io/github/Brightspace/bunyan-firehose?branch=master
+[Coverage Report]: https://coveralls.io/github/Brightspace/bunyan-firehose?branch=master
+[Vulnerabilities Badge]: https://snyk.io/test/github/Brightspace/bunyan-firehose/badge.svg
+[Vulnerabilities Report]: https://snyk.io/test/github/Brightspace/bunyan-firehose
