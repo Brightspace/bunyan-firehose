@@ -2,7 +2,7 @@
 
 const AWS = require('aws-sdk');
 const { Writable } = require('stream');
-const { merge } = require('lodash');
+const merge = require('lodash.merge');
 const retry = require('retry');
 
 const defaultBuffer = {

@@ -3,7 +3,7 @@ import { stdSerializers, createLogger } from 'bunyan';
 import { createStream } from '../';
 import deepmerge from 'deepmerge';
 import { expect } from 'chai';
-import { merge } from 'lodash';
+import merge from 'lodash.merge';
 import { createSandbox, match } from 'sinon';
 
 const region = 'us-east-1';
