@@ -11,13 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: Brightspace/third-party-actions@actions/checkout
-      - name: Read configs
-        id: configs
-        run: echo "##[set-output name=NODE_VERSION;]$(cat .nvmrc)"
+      - name: Get node version
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
       - name: Setup node
         uses: Brightspace/third-party-actions@actions/setup-node
         with:
-          node-version: ${{ steps.configs.outputs.NODE_VERSION }}
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install packages
         run: npm i
       - name: Run tests
