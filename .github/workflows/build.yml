@@ -1,5 +1,7 @@
 name: build
 on:
+  schedule:
+    - cron: '0 15 * * *'
   pull_request:
   push:
     branches:
@@ -7,16 +9,19 @@ on:
 jobs:
   build:
     name: build
+    if: (!startsWith(github.event.head_commit.message, 'chore(release):'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: Brightspace/third-party-actions@actions/checkout
+        with:
+          fetch-depth: 0
       - name: Get node version
         run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
       - name: Setup node
         uses: Brightspace/third-party-actions@actions/setup-node
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{env.NODE_VERSION}}
       - name: Install packages
         run: npm i
       - name: Run tests
@@ -24,4 +29,17 @@ jobs:
       - name: Report coverage
         uses: Brightspace/third-party-actions@coverallsapp/github-action
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{github.token}}
+      - name: Release
+        if: >
+          github.ref == 'refs/heads/master' &&
+          (
+            github.event_name == 'schedule' ||
+            (
+              github.event_name == 'push' &&
+              startsWith(github.event.head_commit.message, 'fix')
+            )
+          )
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{github.token}}

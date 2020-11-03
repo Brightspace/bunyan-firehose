@@ -29,7 +29,7 @@
   "scripts": {
     "lint": "eslint .",
     "format": "npm run lint -s -- --fix",
-    "pretest": "npm run lint -s && license-checker-ci",
+    "pretest": "npm run lint -s",
     "test": "nyc mocha --colors"
   },
   "files": [
@@ -44,8 +44,10 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/register": "^7.12.1",
+    "@semantic-release/git": "^9.0.0",
     "bunyan": "^1.8.14",
     "chai": "^4.2.0",
+    "conventional-changelog-conventionalcommits": "^4.4.0",
     "d2l-license-checker": "^3.1.1",
     "deepmerge": "^4.2.2",
     "eslint": "^7.12.1",
@@ -54,6 +56,7 @@
     "eslint-plugin-mocha": "^8.0.0",
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
+    "semantic-release": "^17.2.2",
     "sinon": "^9.2.1"
   }
 }
