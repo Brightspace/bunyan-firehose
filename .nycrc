@@ -5,7 +5,9 @@
 	"statements": 65,
 	"functions": 70,
 	"branches": 50,
-	"include": ["src/**/*.js"],
+	"include": [
+		"src/**/*.js"
+	],
 	"reporter": [
 		"lcov",
 		"text"
