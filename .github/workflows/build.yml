@@ -24,4 +24,4 @@ jobs:
       - name: Report coverage
         uses: Brightspace/third-party-actions@coverallsapp/github-action
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{github.token}}
