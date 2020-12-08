@@ -16,6 +16,6 @@ jobs:
       - name: Sync labels
         uses: Brightspace/third-party-actions@micnncim/action-label-syncer
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{github.token}}
         with:
           manifest: .github/labels.yml
