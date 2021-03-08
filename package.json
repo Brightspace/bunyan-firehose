@@ -45,7 +45,7 @@
     "@babel/preset-env": "^7.13.9",
     "@babel/register": "^7.13.8",
     "bunyan": "^1.8.15",
-    "chai": "^4.3.0",
+    "chai": "^4.3.3",
     "d2l-license-checker": "^3.2.0",
     "deepmerge": "^4.2.2",
     "eslint": "^7.21.0",
