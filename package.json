@@ -48,7 +48,7 @@
     "chai": "^4.3.3",
     "d2l-license-checker": "^3.2.0",
     "deepmerge": "^4.2.2",
-    "eslint": "^7.21.0",
+    "eslint": "^7.22.0",
     "eslint-config-brightspace": "^0.13.0",
     "eslint-plugin-chai-friendly": "^0.6.0",
     "eslint-plugin-mocha": "^8.1.0",
