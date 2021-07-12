@@ -36,7 +36,7 @@
     "src/**/*.js"
   ],
   "dependencies": {
-    "aws-sdk": "^2.939.0",
+    "aws-sdk": "^2.943.0",
     "lodash.merge": "^4.6.2",
     "retry": "^0.13.1"
   },
